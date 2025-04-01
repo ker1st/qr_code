@@ -1,0 +1,33 @@
+<div class="row g-2">
+  <div class="col-md-6 p-5">
+    <div class="card">
+      <div class="card-header" style="text-align: center;">
+        <b style="font-size: 16pt;">Generador de QR</b>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Para generar el QR introduce la liga en el siguiente cuadro
+          de texto</h5>
+        <br><br>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="liga" [(ngModel)]="inputUrl">
+          <label for="floatingInput">Introduce la liga</label>
+        </div>
+        <br>
+        <!-- <div>
+          <button type="button" class="btn btn-outline-success" (click)="getQr()">Generar QR</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 p-5">
+    <div class="card">
+      <div class="card-header" style="text-align: center;">
+        <b>QR</b>
+      </div>
+      <div class="card-body">
+        <qrcode [qrdata]="getQr()" [width]="528" [imageSrc]="'assets/Imagen1.png'" [imageHeight]="100"
+          [imageWidth]="150" [errorCorrectionLevel]="'M'" [elementType]="'canvas'"></qrcode>
+      </div>
+    </div>
+  </div>
+</div>
