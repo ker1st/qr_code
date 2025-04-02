@@ -13,20 +13,24 @@
           <label for="floatingInput">Introduce la liga</label>
         </div>
         <br>
-        <!-- <div>
-          <button type="button" class="btn btn-outline-success" (click)="getQr()">Generar QR</button>
-        </div> -->
+        <br>
+        <div class="col-sm-12" style="text-align: center;">
+          <button type="button" class="btn btn-outline-success" >
+            <a [href]="qrCodeDownloadLink" class="btn-secondary" download="qrcode">Descargar</a>
+          </button>
+          <br><br>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-6 p-5">
+  <div class="col-md-6 p-5 d-flex w-50">
     <div class="card">
       <div class="card-header" style="text-align: center;">
         <b>QR</b>
       </div>
-      <div class="card-body">
-        <qrcode [qrdata]="getQr()" [width]="528" [imageSrc]="'assets/Imagen1.png'" [imageHeight]="100"
-          [imageWidth]="150" [errorCorrectionLevel]="'M'" [elementType]="'canvas'"></qrcode>
+      <div>
+        <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="myAngularxQrCode" [qrdata]="getQr()" [width]="528" [imageSrc]="'assets/iecm-institutoelectoralcm.jpg'" [imageHeight]="140"
+          [imageWidth]="140" [errorCorrectionLevel]="'M'" [elementType]="'canvas'"></qrcode>
       </div>
     </div>
   </div>
